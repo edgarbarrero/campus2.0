@@ -1,0 +1,83 @@
+#logo-bar {
+  background-color: #DCDCDC;
+}
+#login-bar {
+  background-color: #FD6400;
+  padding: 10px;
+  width: 100%;
+  text-align: right;
+}
+.login-link {
+  color: white;
+  text-decoration: none;
+  margin-right: 10px;
+}
+.logo {
+  width: 150px;
+  margin-left: 50px;
+}
+
+.carousel-caption h3{
+  padding-bottom: 20px !important;
+  font-size: 30px;
+}
+
+.carousel-caption {
+ background: rgba(0, 0, 0, 0.4);
+}
+#main-links {
+  font-weight: bold;
+  margin-top: 25px !important;
+  margin-bottom: 25px !important;
+
+}
+.welcome-link{
+  padding: 10px;
+  color: #FD6400;
+  font-size: 20px;
+}
+#description {
+  margin-left: -20px;
+  font-size: 20px;
+  font-weight: bold;
+  padding-left: 50px;
+  margin-top: 30px;
+}
+#icon-image {
+  width:50%;
+}
+.description-item {
+  margin-bottom: 10px;
+}
+.btn-exp {
+  width: 100%;
+  height: 50px;
+  font-size: 20px !important;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+  font-weight: bold !important;
+  color:#FD6400 !important;
+  background-color: #DCDCDC !important;
+  border-color: #FD6400 !important;
+  border-width: 2px !important;
+  margin-bottom: 20px !important;
+  margin-top: -10px !important;
+}
+
+.logo-unv {
+  margin-left: 20px;
+}
+#logos-unv {
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+#master-name {
+  color: #FD6400 !important;
+  font-weight: bolder;
+  /*position: absolute;
+  top: 10px;
+  left: 50px;*/
+  font-size: 40px;
+  z-index: 100;
+  padding: 10px;
+}
