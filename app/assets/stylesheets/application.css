@@ -13,6 +13,7 @@
  *= require_tree .
  *= require_self
  *= require welcome
+ *= require font-awesome
  */
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
