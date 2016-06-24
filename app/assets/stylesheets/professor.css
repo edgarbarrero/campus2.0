@@ -1,0 +1,17 @@
+#professor {
+  background-color: #E7E7E7;
+  height: 350px;
+  margin-bottom: 30px;
+}
+
+@media (max-width: 767px) {
+  #professor {
+    height: 250px;
+    margin-bottom: 15px;
+  }
+  .img-professor {
+    margin-top: 35px;
+    margin-bottom: 10px;
+    width: 120px;
+  }
+}
