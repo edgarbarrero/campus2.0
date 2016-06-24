@@ -16,12 +16,10 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
-          <li class="active"><a href="" >Home<span class="sr-only">(current)</span></a></li>
-          <li><a href=<%= "" %> >Presentación</a></li>
-          <li><a href=<%= "" %> >Temario</a></li>
+          <li class="active"><a href=<%= root_path %> >Inicio<span class="sr-only">(current)</span></a></li>
+          <li><a href=<%= presentation_path %> >Presentación</a></li>
           <li><a href=<%= professorate_path %> >Profesorado</a></li>
-
-
+          <li><a href=<%= "" %> >Temario</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <li class="divider-vertical"><a href="#"><%= current_user.email if current_user %></a></li>

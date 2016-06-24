@@ -4,4 +4,7 @@ class WelcomeController < ApplicationController
 
   def professorate
   end
+
+  def presentation
+  end
 end
