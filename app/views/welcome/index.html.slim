@@ -8,24 +8,26 @@ html
     link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet"
     script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" 
     link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css"
-
+    meta name="viewport" content="width=device-width, initial-scale=1.0"
   body
       
-      #login-bar
+      #pre-nav-bar
       == render 'welcome_nav_bar.html.erb'
       .container-fluid
-        
         .row
           .col-lg-12
             #master-name Master en gestión de residuos y RCDs
         .row
           .col-xs-12.col-md-8
             == render 'carousel'
-          .col-xs-12.col-md-4#description
+          .col-xs-12.col-md-4#info
             == render 'info'
-        .row
-          .col-sm-12#logos-unv
-            = image_tag "logo_urjc.png", class: "logo-unv", width: "110px"
-            = image_tag "logo_uc3.png", class: "logo-unv", width: "170px"
-            = image_tag "logo_csic.png", class: "logo-unv", width: "170px"
-            
+        .row#footer
+          .col-xs-12.col-lg-9
+            .col-xs-4.col-md-4.col-lg-2
+              = image_tag "logo_urjc.png", class: "logo-unv", width: "100%"
+            .col-xs-4.col-md-4.col-lg-2
+              = image_tag "logo_uc3.png", class: "logo-unv", width: "100%"
+            .col-xs-4.col-md-4.col-lg-2
+              = image_tag "logo_csic.png", class: "logo-unv", width: "100%"
+              
