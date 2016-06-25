@@ -12,6 +12,7 @@ html
   body
       
       #pre-nav-bar
+        = current_user.email if current_user
       == render 'layouts/nav_bar.html.erb'
       .container-fluid
         

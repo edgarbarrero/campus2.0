@@ -22,9 +22,12 @@ body {
 }
 #pre-nav-bar {
   background-color: #FD6400;
-  height: 23px;
+  height: 30px;
   width: 100%;
   text-align: right;
+  padding: 5px;
+  color: white;
+  padding-right: 25px;
 }
 .logo {
   width: 150px;

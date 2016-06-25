@@ -12,28 +12,27 @@
         <%= image_tag "logo-welcome.png", class: "logo" %>
       </a>
     </div>
-    <% if current_user.present?  %>
-      <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav">
-          <li class=<%= 'active' if current_page?(root_path) %>><a href=<%= root_path %> >Inicio<span class="sr-only">(current)</span></a></li>
-          <li class=<%= 'active' if current_page?(presentation_path) %>><a href=<%= presentation_path %> >Presentación</a></li>
-          <li class=<%= 'active' if current_page?(professorate_path) %>><a href=<%= professorate_path %> >Profesorado</a></li>
-          <li class=<%= 'active' if current_page?("") %>><a href=<%= "" %> >Temario</a></li>
-        </ul>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class=<%= 'active' if current_page?(root_path) %>><a href=<%= root_path %> >Inicio<span class="sr-only">(current)</span></a></li>
+        <li class=<%= 'active' if current_page?(presentation_path) %>><a href=<%= presentation_path %> >Presentación</a></li>
+        <li class=<%= 'active' if current_page?(professorate_path) %>><a href=<%= professorate_path %> >Profesorado</a></li>
+        <li class=<%= 'active' if current_page?(topics_path) %>><a href=<%= topics_path %> >Temario</a></li>
+      </ul>
+      <% if current_user.present?  %>
         <ul class="nav navbar-nav navbar-right">
-          <li class="divider-vertical"><a href="#"><%= current_user.email if current_user %></a></li>
-          <!-- <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Menú <span class="caret"></span></a>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Menú<span class="caret"></span></a>
 
             <ul class="dropdown-menu">
               <li><a href="">Editar mi perfil</a></li>
-              <li><%= link_to "Cerrar sesión", "", method: :delete %></li>
+              <li><%= link_to "Cerrar sesión", destroy_user_session_path, method: :delete %></li>
               <li><%= link_to "Administración", "" %></li>
             </ul>
-          </li> -->
+          </li>
         </ul>
-      </div><!-- /.navbar-collapse -->
-    <% end %>
+      <% end %>
+    </div><!-- /.navbar-collapse -->
   </div>
 </nav>

@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get '/professorate' => 'welcome#professorate'
   get '/presentation' => 'welcome#presentation'
 
+  resources :topics, only: [:show, :index]
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

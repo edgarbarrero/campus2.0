@@ -3,5 +3,15 @@
 #
 # Examples:
 #
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
+#   cities = City.create([{ name: 'Chicago' },{ name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+Topic.destroy_all
+
+titles = ['Economía circular para los RCD',
+          'Producción de RCD ',
+          'Agentes que intervienen y control de los RCD',
+          'Tecnología para la gestion y reciclaje de RCD']
+
+titles.each_with_index do |title, i|
+  Topic.create(title: title)
+end

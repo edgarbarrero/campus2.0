@@ -1,0 +1,18 @@
+// Place all the styles related to the Topics controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.panel-link {
+  text-decoration: none !important;
+  color: #555554 !important;
+  &:hover {
+    text-decoration: none !important;
+    .panel {
+      background-color: #e7e7e7;;
+    }
+  }
+  .panel {
+    background-color: #F5F5F5;
+  }
+}
