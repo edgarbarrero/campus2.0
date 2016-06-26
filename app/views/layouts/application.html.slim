@@ -14,8 +14,12 @@ html
       #pre-nav-bar
         = current_user.email if current_user
       == render 'layouts/nav_bar.html.erb'
+      -if flash[:alert]
+        .alert.alert-warning role="alert" 
+            p#notice 
+              = flash[:alert]
       .container-fluid
-        
+      
         == yield
         .row#footer
           .col-xs-12.col-lg-9
@@ -25,4 +29,4 @@ html
               = image_tag "logo_uc3.png", class: "logo-unv", width: "100%"
             .col-xs-4.col-md-4.col-lg-2
               = image_tag "logo_csic.png", class: "logo-unv", width: "100%"
-              
+      

@@ -1,0 +1,21 @@
+h1: b = "Test del Tema 1"
+/ h2 = @exam.topic.title
+h2 = "Examen de prueba"
+= form_tag topic_exams_path do ||
+  - @questions.each_with_index do |question, i|
+    h4.question-text: b Pregunta #{i + 1}:
+    .panel.panel-default
+      .panel-body
+        p = question.text
+        .checkbox
+          div
+            = radio_button_tag("q[#{question.id}]", 1)
+            = label_tag(:answer, question.answer1)
+          div
+            = radio_button_tag("q[#{question.id}]", 2)
+            = label_tag(:answer, question.answer2)
+          div
+            = radio_button_tag("q[#{question.id}]", 3)
+            = label_tag(:answer, question.answer3)
+          
+  = submit_tag 'Enviar Test', class: "btn btn-lg btn-success"
