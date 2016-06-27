@@ -3,6 +3,9 @@
   height: 350px;
   margin-bottom: 30px;
 }
+.img-professor {
+  margin-top: 35px;
+}
 
 @media (max-width: 767px) {
   #professor {
