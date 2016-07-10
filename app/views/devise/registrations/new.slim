@@ -30,10 +30,8 @@
             = f.label :phone, "Teléfono de contacto"
             = f.text_field :phone, class: "form-control", required: true
           .field.form-group
-            = f.label :birth_date, "Teléfono de contacto"
+            = f.label :birth_date, "Fecha de nacimiento"
             = f.text_field :birth_date, class: "form-control", required: true   
-          .actions
-            = submit_tag "Login", class: "btn btn-primary
-            script.stripe-button src="https://checkout.stripe.com/checkout.js" data-label="Pago con tarjeta" data-amount="10000" data-description="curso rcd"  data-key="#{Rails.application.secrets.stripe_publishable_key}" data-locale="es" data-currency="EUR"
-          div
-            = render "devise/shared/links"
+          .actions.text-center
+            = submit_tag "Enviar", class: "btn btn-primary"
+          = render "devise/shared/links"
