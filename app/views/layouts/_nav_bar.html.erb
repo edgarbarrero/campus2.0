@@ -30,7 +30,9 @@
 
                 <li><a href="">Editar mi perfil</a></li>
                 <li><%= link_to "Cerrar sesión", destroy_user_session_path, method: :delete %></li>
-                <li><%= link_to "Administración", rails_admin_path %></li>
+                <% if can? :manage, :rails_admin  %>
+                  <li><%= link_to "Administración", rails_admin_path %></li>
+                <% end %>
               </ul>
             </li>
           <% else %>
