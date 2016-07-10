@@ -6,5 +6,6 @@ class AddColumsUser < ActiveRecord::Migration
     add_column :users, :phone, :integer
     add_column :users, :birth_date, :string
     add_column :users, :date, :string
+    add_column :users, :card_token, :string
   end
 end

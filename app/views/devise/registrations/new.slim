@@ -1,0 +1,39 @@
+.row
+  .col-sm-4.col-sm-offset-4
+    .edit_form.panel.panel-default
+      .panel-heading
+        h1.panel-title Registro
+      .panel-body
+        = form_for(resource, as: resource_name, url: user_registration_path(resource_name)) do |f|
+          = devise_error_messages!
+          .field.form-group
+            = f.label :email
+            = f.email_field :email, class: "form-control", autofocus: true, required: true
+          .field.form-group
+            = f.label :password, "Contraseña"
+            - if @minimum_password_length
+              em< #{@minimum_password_length} characters mínimo
+            = f.password_field :password, class: "form-control", autocomplete: "off", required: true
+          .field.form-group
+            = f.label :password_confirmation, "Confirmación de contraseña"
+            = f.password_field :password_confirmation, class: "form-control", autocomplete: "off", required: true
+          .field.form-group
+            = f.label :name, "Nombre"
+            = f.text_field :name, class: "form-control", required: true
+          .field.form-group
+            = f.label :surname, "Apellidos"
+            = f.text_field :surname, class: "form-control", required: true
+          .field.form-group
+            = f.label :dni, "DNI"
+            = f.text_field :dni, class: "form-control", required: true
+          .field.form-group
+            = f.label :phone, "Teléfono de contacto"
+            = f.text_field :phone, class: "form-control", required: true
+          .field.form-group
+            = f.label :birth_date, "Teléfono de contacto"
+            = f.text_field :birth_date, class: "form-control", required: true   
+          .actions
+            = submit_tag "Login", class: "btn btn-primary
+            script.stripe-button src="https://checkout.stripe.com/checkout.js" data-label="Pago con tarjeta" data-amount="10000" data-description="curso rcd"  data-key="#{Rails.application.secrets.stripe_publishable_key}" data-locale="es" data-currency="EUR"
+          div
+            = render "devise/shared/links"

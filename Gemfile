@@ -33,6 +33,10 @@ gem 'font-awesome-rails'
 
 gem 'rails_admin'
 
+gem 'stripe'
+
+gem 'annotate'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

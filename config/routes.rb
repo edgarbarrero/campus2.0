@@ -15,7 +15,12 @@ Rails.application.routes.draw do
     resources :exams, only: [:new, :create]
   end
   resources :exams, only: [:index]
-  resources :users, only: [:edit, :create, :delete]
+  resources :users, only: [:edit, :create, :delete] do
+    member do
+      get 'payment'
+      post 'create_payment'
+    end
+  end
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

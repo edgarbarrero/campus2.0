@@ -30,7 +30,21 @@ class UsersController < ApplicationController
     end
   end
 
+  def create_payment
+    byebug
+    @user = User.find(params[:id])
+    @user.card_token = params['stripeToken']
+    raise 'Please, check registration errors' unless @user.valid?
+    @user.process_payment
+    @user.save
+    redirect_to root_path, notice: 'Pago realizado correctamente'
+  rescue Exception => e
+    flash[:notice] = e.message
+    render :payment
+  end
+
   private
+
     # Use callbacks to share common setup or constraints between actions.
     def set_user
       @user = User.find(params[:id])
@@ -39,5 +53,9 @@ class UsersController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
       params.require(:user).permit(:name, :surname, :dni, :email, :phone, :birth_date, :date)
+    end
+
+    def stripe_params
+      params.permit :stripeEmail, :stripeToken
     end
 end
