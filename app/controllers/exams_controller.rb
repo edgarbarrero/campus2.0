@@ -5,7 +5,14 @@ class ExamsController < ApplicationController
   end
 
   def create
-    flash[:alert] = "Enhorabuena, has aprobado el test"
+    corrector = CorrectorService.new(params[:q])
+    corrector.perform
+    if corrector.passed?
+      Test.create(topic_id: params[:topic_id], user: current_user)
+      flash[:alert] = 'Enhorabuena, has aprobado el test'
+    else
+      flash[:alert] = 'Lo sentimos has suspendido el test'
+    end
     redirect_to topics_path
   end
 end

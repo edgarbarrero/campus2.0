@@ -15,6 +15,7 @@ Rails.application.routes.draw do
     resources :exams, only: [:new, :create]
   end
   resources :exams, only: [:index]
+  resources :users, only: [:edit, :create, :delete]
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
