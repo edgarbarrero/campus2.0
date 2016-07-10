@@ -1,3 +1,10 @@
-= form_tag create_payment_user_path, html: { class: "basic-grey" } do |f|
-  .actions
-    script.stripe-button src="https://checkout.stripe.com/checkout.js" data-label="Pago con tarjeta" data-amount="10000" data-description="curso rcd"  data-key="#{Rails.application.secrets.stripe_publishable_key}" data-locale="es" data-currency="EUR"
+.row
+  .col-sm-4.col-sm-offset-4
+    .edit_form.panel.panel-default
+      .panel-heading
+        h1.panel-title Pago con tarjeta
+      .panel-body
+        | El precio completo del curso son 150 €
+        = form_tag create_payment_user_path, html: { class: "basic-grey" } do |f|
+          .actions
+            script.stripe-button src="https://checkout.stripe.com/checkout.js" data-label="Pago con tarjeta" data-amount="10000" data-description="curso rcd"  data-key="#{Rails.application.secrets.stripe_publishable_key}" data-locale="es" data-currency="EUR"

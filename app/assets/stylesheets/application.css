@@ -80,3 +80,8 @@ body {
       font-size: 20px;
     }
 }
+
+.passed-icon {
+  font-size: 30px !important;
+  color: #5DB15F;
+}
