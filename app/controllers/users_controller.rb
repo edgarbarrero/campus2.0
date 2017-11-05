@@ -31,7 +31,6 @@ class UsersController < ApplicationController
   end
 
   def create_payment
-    byebug
     @user = User.find(params[:id])
     @user.card_token = params['stripeToken']
     raise 'Please, check registration errors' unless @user.valid?
