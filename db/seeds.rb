@@ -8,10 +8,15 @@
 Topic.destroy_all
 Question.destroy_all
 
-titles = ['Economía circular para los RCD',
-          'Producción de RCD ',
-          'Agentes que intervienen y control de los RCD',
-          'Tecnología para la gestion y reciclaje de RCD']
+titles = ['Economía circular para los residuos de construcción y demolición (RCD).',
+          'Legislación sobre los RCD.',
+          'Caracterización de los RCD.',
+          'Tecnología y tratamiento para los RCD',
+          'Vertederos',
+          'Aridos reciclados procedentes de RCD',
+          'Aplicaciones con áridos reciclados procedentes de RCD.',
+          'Viabilidad económica del reciclaje de RCD',
+          'Seguridad e integración social del reciclaje de RCD']
 questions = ["¿Lorem ipsum dolor sit amet consectetur adipiscing elit. Nunc eleifend dolor?",
              "¿quis pharetra iaculis. Donec porta a enim a mollis. Proin ut maximus magna?",
              "¿Aliquam erat volutpat. Ut fringilla mauris vitae egestas suscipit?",
