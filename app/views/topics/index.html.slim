@@ -13,5 +13,5 @@
                 h4: b Tema #{i + 1}:
                 h5 = topic.title.camelize
               .col-sm-2
-                - if current_user && (current_user.exams.pluck(:topic_id).include? topic.id)
+                - if current_user && (current_user.topics.include? topic)
                   = fa_icon "check", class: 'passed-icon'
