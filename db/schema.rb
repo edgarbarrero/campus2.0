@@ -16,14 +16,6 @@ ActiveRecord::Schema.define(version: 20160710212350) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "exams", force: :cascade do |t|
-    t.boolean  "passed"
-    t.integer  "topic_id"
-    t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "questions", force: :cascade do |t|
     t.string   "text"
     t.string   "answer1"

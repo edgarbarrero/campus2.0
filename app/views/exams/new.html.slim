@@ -17,5 +17,5 @@ h2 = "Examen de prueba"
           div
             = radio_button_tag("q[#{question.id}]", 3)
             = label_tag(:answer, question.answer3)
-          
+
   = submit_tag 'Enviar Test', class: "btn btn-lg btn-success"

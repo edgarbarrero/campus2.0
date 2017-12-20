@@ -30,8 +30,6 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  has_many :exams
-
    def process_payment
      customer = Stripe::Customer.create email: email,
                                         card: card_token
