@@ -6,7 +6,7 @@ class ExamsController < ApplicationController
   def create
     corrector = CorrectorService.new(params[:q])
     corrector.perform
-    if corrector.passed? || true
+    if corrector.passed?
       flash[:alert] = 'Enhorabuena, has aprobado el test'
     else
       flash[:alert] = 'Lo sentimos, has suspendido el test'

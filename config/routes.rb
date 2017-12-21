@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   get '/presentation' => 'welcome#presentation'
 
   resources :topics, only: [:show, :index] do
-    resources :exams, only: [:new]
+    resources :exams, only: [:new, :create]
   end
   resources :users, only: [:edit, :create, :delete] do
     member do
