@@ -8,9 +8,6 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'welcome#index'
 
-  get '/professorate' => 'welcome#professorate'
-  get '/presentation' => 'welcome#presentation'
-
   resources :topics, only: [:show, :index] do
     resources :exams, only: [:new, :create]
   end
