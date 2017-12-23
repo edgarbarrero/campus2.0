@@ -4,4 +4,9 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   before_action :authenticate_user!
+
+  def authenticate_payment
+    return if current_user.payment?
+    redirect_to payment_user_path(current_user)
+  end
 end

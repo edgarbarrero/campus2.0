@@ -19,6 +19,7 @@ body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #6B6B6B !important;
   padding-bottom: 50px;
+  font-size: 20px !important;
 }
 #pre-nav-bar {
   background-color: #FD6400;
@@ -83,5 +84,5 @@ body {
 
 .passed-icon {
   font-size: 30px !important;
-  color: #5DB15F;
+  color: #777777;
 }

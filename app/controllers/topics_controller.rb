@@ -1,6 +1,7 @@
 class TopicsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index]
   before_action :set_topic, only: [:show]
+  before_action :authenticate_payment, only: [:show]
 
   def index
     @topics = Topic.all

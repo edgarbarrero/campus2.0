@@ -1,4 +1,6 @@
 class ExamsController < ApplicationController
+  before_action :authenticate_payment
+
   def new
     @questions = Question.where(topic_id: params[:topic_id]).limit(10)
   end

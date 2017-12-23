@@ -40,5 +40,8 @@ class User < ActiveRecord::Base
                            amount: 100000,
                            description: 'curso rcd',
                            currency: 'eur'
+     current_user.payment = true
+     current_user.save
    end
+
 end
