@@ -33,15 +33,7 @@ class User < ActiveRecord::Base
   has_and_belongs_to_many :topics
 
    def process_payment
-     customer = Stripe::Customer.create email: email,
-                                        card: card_token
 
-     Stripe::Charge.create customer: customer.id,
-                           amount: 100000,
-                           description: 'curso rcd',
-                           currency: 'eur'
-     current_user.payment = true
-     current_user.save
    end
 
 end

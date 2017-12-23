@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:edit, :update, :destroy]
+  before_action :validate_user, only: [:payment, :create_payment]
 
   # GET /users/1
   # GET /users/1.json
@@ -33,10 +34,16 @@ class UsersController < ApplicationController
   def create_payment
     @user = User.find(params[:id])
     @user.card_token = params['stripeToken']
-    raise 'Please, check registration errors' unless @user.valid?
-    @user.process_payment
-    @user.save
-    redirect_to root_path, notice: 'Pago realizado correctamente'
+    @user.payment = true
+
+    if @user.save
+      customer = Stripe::Customer.create email: @user.email, card: @user.card_token
+      Stripe::Charge.create customer: customer.id,amount: 100000,description: 'curso rcd',currency: 'eur'
+
+      redirect_to root_path, notice: 'Pago realizado correctamente'
+    else
+      redirect_to edit_user_password_path, notice: 'Por favor, rellena los campos obligatorios para el usuario.'
+    end
   rescue Exception => e
     flash[:notice] = e.message
     render :payment
@@ -45,16 +52,20 @@ class UsersController < ApplicationController
   private
 
     # Use callbacks to share common setup or constraints between actions.
-    def set_user
-      @user = User.find(params[:id])
-    end
+  def set_user
+    @user = User.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def user_params
-      params.require(:user).permit(:name, :surname, :dni, :email, :phone, :birth_date, :date)
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def user_params
+    params.require(:user).permit(:name, :surname, :dni, :email, :phone, :birth_date, :date)
+  end
 
-    def stripe_params
-      params.permit :stripeEmail, :stripeToken
-    end
+  def stripe_params
+    params.permit :stripeEmail, :stripeToken
+  end
+
+  def validate_user
+    redirect_to edit_user_password_path, notice: 'Por favor, rellena los campos obligatorios para el usuario.' unless current_user.valid?
+  end
 end
