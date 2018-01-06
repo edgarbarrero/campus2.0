@@ -46,7 +46,7 @@ body {
   margin-bottom: 20px !important;
   margin-top: -10px !important;
 }
-#master-name {
+.master-name {
   font-weight: bolder;
   font-size: 30px;
   padding: 7px;
@@ -70,7 +70,7 @@ body {
    .carousel-caption {
       display:none !important;
       }
-    #master-name {
+    .master-name {
       text-align: center;
       font-size: 25px;
     }
@@ -93,4 +93,8 @@ body {
 
 p {
   text-align: justify;
+}
+
+.bold {
+  font-weight: 700;
 }
