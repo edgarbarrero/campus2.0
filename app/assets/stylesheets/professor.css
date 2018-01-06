@@ -1,14 +1,15 @@
-#professor {
+.professor-image {
   background-color: #E7E7E7;
   height: 350px;
   margin-bottom: 30px;
 }
 .img-professor {
   margin-top: 35px;
+  width: 200px;
 }
 
 @media (max-width: 767px) {
-  #professor {
+  .professor-image {
     height: 250px;
     margin-bottom: 15px;
   }
