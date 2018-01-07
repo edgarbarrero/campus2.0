@@ -31,5 +31,5 @@ RailsAdmin.config do |config|
     # history_index
     # history_show
   end
-  config.included_models = [ User, Question ]
+  config.included_models = [ User, Topic, Question ]
 end
