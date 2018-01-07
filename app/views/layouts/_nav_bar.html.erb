@@ -19,6 +19,9 @@
         <li class=><a href=<%= root_path(anchor: 'presentation') %> >Presentación</a></li>
         <li class=><a href=<%= root_path(anchor: 'professorate') %> >Profesorado</a></li>
         <li class=<%= 'active' if current_page?(topics_path) %>><a href=<%= topics_path %> >Temario</a></li>
+        <li><a href='http://rcdasociacion.es' target='_blank'>Quiénes somos</a></li>
+        <li><a href='http://rcdasociacion.es/contacto' target='_blank'>Contacto</a></li>
+
       </ul>
         <ul class="nav navbar-nav navbar-right">
           <% if current_user.present?  %>
