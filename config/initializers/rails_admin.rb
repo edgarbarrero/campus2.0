@@ -31,5 +31,37 @@ RailsAdmin.config do |config|
     # history_index
     # history_show
   end
-  config.included_models = [ User, Topic, Question ]
+  config.included_models = [User, Topic, Question]
+
+  config.model 'Question' do
+    list do
+      field :text
+      field :answer1
+      field :answer2
+      field :answer3
+      field :answer4
+      field :correct_answer
+      field :topic_id
+    end
+
+    show do
+      field :text
+      field :answer1
+      field :answer2
+      field :answer3
+      field :answer4
+      field :correct_answer
+      field :topic_id
+    end
+
+    edit do
+      field :text
+      field :answer1
+      field :answer2
+      field :answer3
+      field :answer4
+      field :correct_answer
+      field :topic_id
+    end
+  end
 end
