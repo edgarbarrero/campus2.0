@@ -86,9 +86,10 @@ body {
   font-size: 30px !important;
   color: #777777;
 }
-
-.views_config {
-  padding: 0px 100px 10px 100px !important;
+@media screen and (min-width: 480px) {
+  .views_config {
+    padding: 0px 100px 10px 100px !important;
+  }
 }
 
 p {
