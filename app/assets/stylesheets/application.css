@@ -86,7 +86,7 @@ body {
   font-size: 30px !important;
   color: #777777;
 }
-@media screen and (min-width: 480px) {
+@media screen and (min-width: 767px) {
   .views_config {
     padding: 0px 100px 10px 100px !important;
   }
