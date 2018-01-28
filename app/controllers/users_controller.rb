@@ -38,7 +38,7 @@ class UsersController < ApplicationController
 
     if @user.save
       customer = Stripe::Customer.create email: @user.email, card: @user.card_token
-      Stripe::Charge.create customer: customer.id,amount: 000_010,description: 'curso rcd',currency: 'eur'
+      Stripe::Charge.create customer: customer.id,amount: 001_000,description: 'curso rcd',currency: 'eur'
 
       redirect_to root_path, notice: 'Pago realizado correctamente'
     else
