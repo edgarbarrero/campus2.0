@@ -9,4 +9,4 @@
         | Precio completo del curso: 150 €
         = form_tag create_payment_user_path, html: { class: "basic-grey" } do |f|
           .actions
-            script.stripe-button src="https://checkout.stripe.com/checkout.js" data-label="incripción" data-amount="10000" data-description="curso rcd"  data-key="#{Rails.application.secrets.stripe_publishable_key}" data-locale="es" data-currency="EUR"
+            script.stripe-button src="https://checkout.stripe.com/checkout.js" data-label="incripción" data-amount="19900" data-description="curso rcd"  data-key="#{Rails.application.secrets.stripe_publishable_key}" data-locale="es" data-currency="EUR"
