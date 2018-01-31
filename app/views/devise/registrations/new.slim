@@ -27,11 +27,14 @@
             = f.label :dni, "DNI"
             = f.text_field :dni, class: "form-control", required: true
           .field.form-group
+            = f.label :professional_activity, "Actividad profesional"
+            = f.text_field :birth_date, class: "form-control", required: true
+          .field.form-group
             = f.label :phone, "Teléfono de contacto"
-            = f.text_field :phone, class: "form-control", required: true
+            = f.text_field :phone, class: "form-control"
           .field.form-group
             = f.label :birth_date, "Fecha de nacimiento"
-            = f.text_field :birth_date, class: "form-control", required: true   
+            = f.text_field :birth_date, class: "form-control"
           .actions.text-center
             = submit_tag "Enviar", class: "btn btn-primary"
           = render "devise/shared/links"
