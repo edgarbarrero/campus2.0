@@ -23,10 +23,15 @@
     p Ejercicios de autoevaluación.
   .col-xs-2.icon
     = fa_icon "pencil"
-.row.description-item style="margin-bottom: 10px;"
+.row.description-item
   .col-xs-10
     p Acreditado por la Asociación Española de RCDs.
   .col-xs-2.icon
     = fa_icon "certificate"
+.row.description-item style="margin-bottom: 10px;"
+  .col-xs-10
+    p Precio: 199 € con 50% de descuento para socios
+  .col-xs-2.icon
+    = fa_icon "euro-sign"
 .row.text-center
   = link_to "¡Matriculate ya!", new_user_registration_path, class: "btn btn-default btn-exp"
