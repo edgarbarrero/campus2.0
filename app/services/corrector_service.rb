@@ -12,6 +12,6 @@ class CorrectorService
   end
 
   def passed?
-    @right_answers >= 5
+    @right_answers >= 8
   end
 end

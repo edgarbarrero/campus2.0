@@ -1,5 +1,5 @@
-h1: b = "Test del Tema 1"
-/ h2 = @exam.topic.title
+h2: b = "Test #{@topic.id}"
+h2: b = @topic.title
 = form_tag topic_exams_path do ||
   - @questions.each_with_index do |question, i|
     h4.question-text: b Pregunta #{i + 1}:

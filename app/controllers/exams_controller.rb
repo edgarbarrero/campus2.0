@@ -2,7 +2,8 @@ class ExamsController < ApplicationController
   before_action :authenticate_payment
 
   def new
-    @questions = Question.where(topic_id: params[:topic_id]).limit(10)
+    @topic = Topic.find(params[:topic_id])
+    @questions = @topic.questions.order('random()').limit(10)
   end
 
   def create
