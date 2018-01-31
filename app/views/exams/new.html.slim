@@ -16,5 +16,8 @@ h2: b = @topic.title
           div
             = radio_button_tag("q[#{question.id}]", 3)
             = label_tag(:answer, question.answer3)
+          div
+            = radio_button_tag("q[#{question.id}]", 4)
+            = label_tag(:answer, question.answer4)
 
   = submit_tag 'Enviar Test', class: "btn btn-lg btn-success"
