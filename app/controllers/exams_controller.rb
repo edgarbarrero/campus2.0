@@ -10,6 +10,7 @@ class ExamsController < ApplicationController
     corrector = CorrectorService.new(params[:q])
     corrector.perform
     if corrector.passed?
+      current_user.topics << Topic.find(params[:topic_id])
       flash[:alert] = 'Enhorabuena, has aprobado el test'
     else
       flash[:alert] = 'Lo sentimos, has suspendido el test'

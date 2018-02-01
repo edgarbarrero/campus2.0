@@ -1,13 +1,13 @@
 class CorrectorService
-  def initialize(answers)
-    @answers = answers
+  def initialize(params)
+    @params = params
     @right_answers = 0
   end
 
   def perform
-    @answers.each do |answer|
-      q = Question.find(answer[0])
-      (@right_answers += 1) if q.correct_answer == answer[1]
+    @params.each do |question_id, correct_answer|
+      q = Question.find(question_id)
+      (@right_answers += 1) if q.correct_answer.to_s == correct_answer
     end
   end
 
