@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:edit, :update, :destroy]
+  before_action :set_user, only: [:edit, :update, :destroy, :welcome]
   before_action :validate_user, only: [:payment, :create_payment]
+  skip_before_action :authenticate_user!, only: [:welcome]
 
   # GET /users/1
   # GET /users/1.json
@@ -47,6 +48,9 @@ class UsersController < ApplicationController
   rescue Exception => e
     flash[:notice] = e.message
     render :payment
+  end
+
+  def welcome
   end
 
   private

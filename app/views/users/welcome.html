@@ -1,0 +1,23 @@
+<h2>Bienvenido al curso on-line de gestión de residuos de construcción y demolición (RCD)</h2>
+<p>
+  Estás a un sólo un paso de poder comenzar el curso.
+</p>
+<p>
+  Deberías haber recibido las instrucciones de confirmación por email.
+  Pinchando en el enlace de dicho mail, confirmarás tu correo electrónico y accederas a la plataforma de pago.
+</p>
+<p class='bold'>
+  ! Muchas gracias !
+</p>
+<%= form_for(@user, url: confirmation_path(@user), html: { method: :post }) do |f| %>
+
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true, value: (@user.pending_reconfirmation? ? @user.unconfirmed_email : @user.email) %>
+  </div>
+  </br>
+  <div class="actions">
+    <%= f.submit "Reenviar intrucciones de confirmación", class: 'btn btn-default btn-success' %>
+  </div>
+  </br>
+<% end %>
