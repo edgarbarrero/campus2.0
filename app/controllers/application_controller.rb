@@ -9,4 +9,9 @@ class ApplicationController < ActionController::Base
     return if current_user.payment?
     redirect_to payment_user_path(current_user)
   end
+
+  # Overwriting devise method
+  def after_inactive_sign_up_path_for(_resource)
+    new_user_confirmation_path
+  end
 end
