@@ -5,11 +5,14 @@ class WelcomeController < ApplicationController
   end
 
   def download_pdf
+    filename = params[:filename]
+    return unless filename
     send_file(
       "#{Rails.root}/app/assets/test.pdf",
-      filename: "test.pdf",
-      type: :pdf,
-      format: :pdf
+      filename: "#{filename}.pdf",
+      type: "application/pdf",
+      format: :pdf,
+      disposition:'attachment'
     )
   end
 end
