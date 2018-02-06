@@ -39,8 +39,8 @@ class UsersController < ApplicationController
 
     if @user.save
       customer = Stripe::Customer.create email: @user.email, card: @user.card_token
-      Stripe::Charge.create customer: customer.id,amount: 199_000,description: 'curso rcd',currency: 'eur'
-      UserMailer.new_user_registration(User.first).deliver_now
+      Stripe::Charge.create customer: customer.id, amount: 19900, description: 'curso rcd', currency: 'eur'
+      UserMailer.new_user_registration(@user).deliver_now
       redirect_to root_path, notice: 'Pago realizado correctamente'
     else
       redirect_to edit_user_password_path, notice: 'Por favor, rellena los campos obligatorios para el usuario.'
