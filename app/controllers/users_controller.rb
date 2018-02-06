@@ -35,18 +35,18 @@ class UsersController < ApplicationController
   def create_payment
     @user = User.find(params[:id])
     @user.card_token = params['stripeToken']
-    @user.payment = true
-
-    if @user.save
+    if @user.valid?
       customer = Stripe::Customer.create email: @user.email, card: @user.card_token
       Stripe::Charge.create customer: customer.id, amount: 19900, description: 'curso rcd', currency: 'eur'
       UserMailer.new_user_registration(@user).deliver_now
-      redirect_to root_path, notice: 'Pago realizado correctamente'
+      @user.payment = true
+      @user.save
+      redirect_to root_path, alert: 'Pago realizado correctamente'
     else
-      redirect_to edit_user_password_path, notice: 'Por favor, rellena los campos obligatorios para el usuario.'
+      redirect_to edit_user_password_path, alert: 'Por favor, rellena los campos obligatorios para el usuario antes de realizar el pago.'
     end
-  rescue Exception => e
-    flash[:notice] = e.message
+  rescue Stripe::CardError => e
+    flash[:alert] = e.message
     render :payment
   end
 
