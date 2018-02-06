@@ -8,7 +8,7 @@ class WelcomeController < ApplicationController
     filename = params[:filename]
     return unless filename
     send_file(
-      "#{Rails.root}/app/assets/test.pdf",
+      "#{Rails.root}/app/assets/#{filename}.pdf",
       filename: "#{filename}.pdf",
       type: "application/pdf",
       format: :pdf,
