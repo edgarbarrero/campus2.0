@@ -56,6 +56,7 @@ group :development, :test do
   # console
   gem 'byebug'
   gem 'rails_real_favicon'
+  gem "letter_opener"
 end
 
 group :development do
