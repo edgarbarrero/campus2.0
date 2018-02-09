@@ -6,9 +6,18 @@
   Deberías haber recibido las instrucciones de confirmación por email.
   Pinchando en el enlace de dicho mail, confirmarás tu correo electrónico y accederas a la plataforma de pago.
 </p>
+</br>
 <p class='bold'>
   ! Muchas gracias !
 </p>
+
+</br>
+</br>
+<p>
+  En caso de no haber recibido las intrucciones de confirmación, revisa tu carpeta de correo no desado.
+  Si necesitas que volvamos a enviártelas, por favor introduce aquí tu email
+</p>
+
 <%= form_for(@user, url: confirmation_path(@user), html: { method: :post }) do |f| %>
 
   <div class="field">

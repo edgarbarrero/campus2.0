@@ -41,7 +41,7 @@ class UsersController < ApplicationController
       UserMailer.new_user_registration(@user).deliver_now
       @user.payment = true
       @user.save
-      redirect_to root_path, alert: 'Pago realizado correctamente'
+      redirect_to root_path, success: 'Pago realizado correctamente'
     else
       redirect_to edit_user_password_path, alert: 'Por favor, rellena los campos obligatorios para el usuario antes de realizar el pago.'
     end
@@ -53,6 +53,9 @@ class UsersController < ApplicationController
   def welcome
   end
 
+  def payment
+    redirect_to root_path if current_user.payment
+  end
   private
 
     # Use callbacks to share common setup or constraints between actions.
