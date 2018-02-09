@@ -29,6 +29,8 @@ gem 'slim', '~> 3.0', '>= 3.0.6'
 
 gem 'rails_12factor', group: :production
 
+gem 'rollbar'
+
 gem 'font-awesome-rails'
 
 gem 'rails_admin'

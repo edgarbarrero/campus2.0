@@ -201,6 +201,8 @@ GEM
       mime-types (>= 1.16, < 4.0)
       netrc (~> 0.8)
     rolify (5.2.0)
+    rollbar (2.15.0)
+      multi_json
     rubyzip (1.2.1)
     sass (3.5.5)
       sass-listen (~> 4.0.0)
@@ -272,6 +274,7 @@ DEPENDENCIES
   rails_admin
   rails_real_favicon
   rolify
+  rollbar
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   slim (~> 3.0, >= 3.0.6)
