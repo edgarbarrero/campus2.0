@@ -15,9 +15,21 @@ html
         = current_user.email if current_user
       == render 'layouts/nav_bar.html.erb'
       -if flash[:alert]
-        .alert.alert-warning role="alert"
-            p#notice
-              = flash[:alert]
+        .alert.alert-dismissable.alert-danger role="alert"
+          a.close aria-label="close" data-dismiss="alert" href="#"  &times;
+          p#notice
+            = flash[:alert]
+      -if flash[:success]
+        .alert.alert-dismissable.alert-success role="alert"
+          a.close aria-label="close" data-dismiss="alert" href="#"  &times;
+          p#notice
+            = flash[:success]
+      -if flash[:notice]
+        .alert.alert-dismissable.alert-info role="alert"
+          a.close aria-label="close" data-dismiss="alert" href="#"  &times;
+          p#notice
+            = flash[:notice]
+
       .container-fluid.views_config
         == yield
       .row#footer
