@@ -39,8 +39,6 @@ gem 'stripe'
 
 gem 'annotate'
 
-gem 'font-awesome-rails'
-
 gem 'rolify'
 
 gem 'cancancan', '~> 1.10'
