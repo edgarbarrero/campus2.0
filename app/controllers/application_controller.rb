@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   before_action :authenticate_user!
+  before_action :configure_permitted_parameters, if: :devise_controller?
 
   def authenticate_payment
     return if current_user.payment?
@@ -13,5 +14,12 @@ class ApplicationController < ActionController::Base
   # Overwriting devise method
   def after_inactive_sign_up_path_for(_resource)
     new_user_confirmation_path
+  end
+  protected
+
+  def configure_permitted_parameters
+    # Permit the `subscribe_newsletter` parameter along with the other
+    # sign up parameters.
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :surname, :dni, :email, :phone, :professional_activity])
   end
 end

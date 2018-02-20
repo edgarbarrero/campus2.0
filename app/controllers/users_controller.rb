@@ -65,7 +65,7 @@ class UsersController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def user_params
-    params.require(:user).permit(:name, :surname, :dni, :email, :phone, :birth_date, :date)
+    params.require(:user).permit(:name, :surname, :dni, :email, :phone, :professional_activity)
   end
 
   def stripe_params
