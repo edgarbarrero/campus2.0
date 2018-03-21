@@ -5,7 +5,7 @@
     p = @mode.description
   .col-sm-5
     - @topics.order(:id).each_with_index do |topic, i|
-      = link_to mode_topic_path(topic, @mode), class: "panel-link" do ||
+      = link_to mode_topic_path(@mode, topic), class: "panel-link" do ||
         .panel.panel-default
           .panel-body
             .row
