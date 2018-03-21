@@ -11,10 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180305080839) do
+ActiveRecord::Schema.define(version: 20180311203904) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "modes", force: :cascade do |t|
+    t.string "title"
+    t.string "description"
+  end
+
+  create_table "modes_topics", force: :cascade do |t|
+    t.integer "topic_id"
+    t.integer "mode_id"
+  end
 
   create_table "questions", force: :cascade do |t|
     t.string   "text"
@@ -76,6 +86,7 @@ ActiveRecord::Schema.define(version: 20180305080839) do
     t.string   "confirmation_token"
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
+    t.integer  "mode_id"
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree
