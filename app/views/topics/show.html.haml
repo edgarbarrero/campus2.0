@@ -7,6 +7,6 @@
 - unless current_user.topics.include? @topic
   .row
     .col-sm-12.text-center.test-button
-      = link_to "Realiza el test", new_topic_exam_path(@topic),
+      = link_to "Realiza el test", new_mode_topic_exam_path(@mode, @topic),
                                     class: 'btn btn-default btn-exp',
                                     target: '_blank'

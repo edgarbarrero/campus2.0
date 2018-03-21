@@ -8,8 +8,10 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'welcome#index'
 
-  resources :topics, only: [:show, :index] do
-    resources :exams, only: [:new, :create]
+  resources :modes, only: [:index] do
+    resources :topics, only: [:show, :index] do
+      resources :exams, only: [:new, :create]
+    end
   end
   resources :users, only: [:edit, :create, :delete] do
     member do

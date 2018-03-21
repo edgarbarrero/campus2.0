@@ -7,6 +7,11 @@
         = form_for(resource, as: resource_name, url: user_registration_path) do |f|
           = devise_error_messages!
           .field.form-group
+            = f.label :mode, "Modalidad"
+            br
+            = f.select :mode_id, Mode.all.collect { |m| [ m.title, m.id ] }, include_blank: true, required: true
+            h6 Elige una de las modalidades disponibles
+          .field.form-group
             = f.label :email
             = f.email_field :email, class: "form-control", autofocus: true, required: true
           .field.form-group

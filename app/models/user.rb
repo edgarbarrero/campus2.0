@@ -31,11 +31,17 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable
 
   validates :email, uniqueness: true
+  validates :mode, presence: true
+
+  belongs_to :mode
 
   has_and_belongs_to_many :topics
 
-   def process_payment
+  def process_payment
+  end
 
-   end
+  def available_topics
+    mode.topics
+  end
 
 end
