@@ -5,7 +5,11 @@ class TopicsController < ApplicationController
   before_action :authenticate_payment, only: [:show]
 
   def index
-    @topics = current_user.available_topics
+    @topics = if current_user
+                current_user.available_topics
+              else
+                @mode.topics
+              end
   end
 
   def show
