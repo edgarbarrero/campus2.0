@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180331104222) do
+ActiveRecord::Schema.define(version: 20180331105211) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20180331104222) do
   create_table "modes", force: :cascade do |t|
     t.string "title"
     t.string "description"
+    t.text   "email_content"
   end
 
   create_table "modes_topics", force: :cascade do |t|

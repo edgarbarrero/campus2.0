@@ -1,21 +1,10 @@
-<p>Hola <%= @email %>!</p>
+<p>Hola <%= @user.name %>!</p>
 
-
-<p>Te damos la bienvenida al Curso Online de Gestión de Residuos de Construcción y Demolición (RCD) en estos 10 temas podréis conocer todas las claves para su correcta gestión.</p>
-
-<p>El curso tiene una duración aproximada de 40 horas, al finalizar cada capitulo tendrás un tets de 10 preguntas, debes acertar el 80% para aprobarlo.</p>
-
-<p>Una vez finalizados los test de todos los capítulos, podrás realizar el caso practico en el cual tendrás que aplicar los conocimientos adquiridos durante el curso.</p>
-
-<p>Al finalizar te haremos llegar un diploma acreditativo del curso a tu email.</p>
-
-<p>Si tienes cualquier consulta que hacernos escríbenos a tutorias@rcdasociacion.es, estaremos encantados de ayudarte.</p>
-
-<br>
+<%= @user.mode.email_content.html_safe %>
 
 <p>Puedes confirmar tu correo pinchando en el siguiente enlace:</p>
 
-<p><%= link_to 'Confirmar mi cuenta', confirmation_url(@resource, confirmation_token: @token) %></p>
+<%= link_to 'Confirmar mi cuenta', confirmation_url(@resource, confirmation_token: @token) %>
 <p>Acto seguido serás redirigido a la plataforma de pago para finalizar tu incripción</p>
 
 <p>Si te has incrito en en el curso de 30 horas (Técnicos de Administración Pública), por favor envía un correo a tutorias@rcdasociacion

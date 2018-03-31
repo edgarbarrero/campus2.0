@@ -110,12 +110,14 @@ RailsAdmin.config do |config|
       field :title
       field :description
       field :topics
+      field :email_content
     end
 
     edit do
       field :title
       field :description
       field :topics
+      field :email_content
     end
   end
 
