@@ -118,4 +118,20 @@ RailsAdmin.config do |config|
       field :topics
     end
   end
+
+  config.model 'Topic' do
+    list do
+      field :title
+    end
+
+    show do
+      field :title
+      field :content
+    end
+
+    edit do
+      field :title
+      field :content
+    end
+  end
 end
