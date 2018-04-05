@@ -3,7 +3,7 @@
     %h1= @topic.title
 .row
   .col-sm-12.topic_body
-    = @topic.content.html_safe
+    = render inline: @topic.content
 - unless current_user.topics.include? @topic
   .row
     .col-sm-12.text-center.test-button
