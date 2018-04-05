@@ -104,11 +104,13 @@ RailsAdmin.config do |config|
     list do
       field :title
       field :description
+      field :price
     end
 
     show do
       field :title
       field :description
+      field :price
       field :topics
       field :email_content
     end
@@ -116,6 +118,7 @@ RailsAdmin.config do |config|
     edit do
       field :title
       field :description
+      field :price
       field :topics
       field :email_content
     end

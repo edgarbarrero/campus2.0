@@ -6,9 +6,9 @@
       .panel-body
         = image_tag 'logo.png', style:'width:150px;'
         br
-        | Precio completo del curso: 199 €
+        = "Precio completo del curso: #{current_user.mode.price} €"
         br
         br
         = form_tag create_payment_user_path, html: { class: "basic-grey" } do |f|
           .actions
-            script.stripe-button src="https://checkout.stripe.com/checkout.js" data-label="Inscribirme" data-amount="19900" data-description="curso rcd"  data-key="#{Rails.application.secrets.stripe_publishable_key}" data-locale="es" data-currency="EUR"
+            script.stripe-button src="https://checkout.stripe.com/checkout.js" data-label="Inscribirme" data-amount="#{current_user.mode.price * 100}" data-description="curso rcd"  data-key="#{Rails.application.secrets.stripe_publishable_key}" data-locale="es" data-currency="EUR"

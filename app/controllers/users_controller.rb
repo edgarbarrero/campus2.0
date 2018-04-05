@@ -37,7 +37,7 @@ class UsersController < ApplicationController
     @user.card_token = params['stripeToken']
     if @user.valid?
       customer = Stripe::Customer.create email: @user.email, card: @user.card_token
-      Stripe::Charge.create customer: customer.id, amount: 19900, description: 'curso rcd', currency: 'eur'
+      Stripe::Charge.create customer: customer.id, amount: (@user.mode.price * 100), description: 'curso rcd', currency: 'eur'
       UserMailer.new_user_registration(@user).deliver_now
       @user.payment = true
       @user.save
