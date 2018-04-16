@@ -12,7 +12,7 @@ class ExamsController < ApplicationController
     corrector.perform
     if corrector.passed?
       current_user.topics << Topic.find(params[:topic_id])
-      if current_user.topics.uniq.count == current_user.available_topics
+      if current_user.topics.uniq.count == current_user.available_topics.count
         flash[:success] = 'Enhorabuena, has finalizado con éxito el curso. En breve te enviaremos un correo con tu diploma acreditativo'
         UserMailer.user_complete_course(current_user).deliver_now
       else
