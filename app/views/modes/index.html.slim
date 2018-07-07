@@ -2,11 +2,7 @@
   .col-sm-7
     = image_tag "topics.png", width: "100%"
     h1: b Bienvenido !!
-    p Te damos la bienvenida al curso on-line de gestión de residuos de construcción y demolición (RCD), en estos 10 temas podrás conocer todas las claves para su correcta gestión.
-
-    p Cada tema se complementa con un cuestionario tipo test que deberás aprobar con un 80% de aciertos antes de realizar el caso práctico.
-
-    p Si tienes alguna duda puedes contactar con nosotros en reciclaje@rcdasociacion.es ó en el correo de tutorías del curso que facilitamos a los alumnos matriculados.
+    p Te damos la bienvenida al curso on-line de gestión de residuos de construcción y demolición (RCD).
   .col-sm-5
     - @modes.each do |mode|
       = link_to mode_topics_path(mode), class: "panel-link" do ||
